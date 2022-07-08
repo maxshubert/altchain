@@ -18,11 +18,11 @@ export default class egoizm {
   }
 
   async setNet() {
-    if (window.ethereum.networkVersion !== 97) {
+    if (window.ethereum.networkVersion !== this.chainId) {
       try {
         await window.ethereum.request({
           method: 'wallet_switchEthereumChain',
-          params: [{ chainId: Web3.utils.toHex(97) }]
+          params: [{ chainId: Web3.utils.toHex(this.chainId) }]
         });
       } catch (err) {
         if (err.code === 4902) {
@@ -31,7 +31,7 @@ export default class egoizm {
             params: [
               {
                 chainName: 'BSC Mainnet',
-                chainId: Web3.utils.toHex(97),
+                chainId: Web3.utils.toHex(this.chainId),
                 nativeCurrency: { name: 'Binance Chain Native Token', decimals: 18, symbol: 'BNB'},
                 rpcUrls: 'https://data-seed-prebsc-1-s1.binance.org:8545/'
               }
@@ -40,9 +40,6 @@ export default class egoizm {
         }
       }
     }
-    let state = this.state;
-    state['chain'] = chain;
-    this.setState(state);
   }
   /**
    * @param {Number} amount
