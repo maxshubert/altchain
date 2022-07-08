@@ -54,7 +54,7 @@ export default class egoizm {
     const provider = await detectEthereumProvider({
       mustBeMetaMask: true
     })
-    this.setNet()
+    await this.setNet()
     if (provider) {
       const accounts = await provider.request({method: 'eth_requestAccounts'});
       const userAddress = accounts[0]
@@ -133,6 +133,7 @@ export default class egoizm {
     const provider = await detectEthereumProvider({
       mustBeMetaMask: true
     })
+    await this.setNet()
     if (provider) {
         const accounts = await provider.request({method: 'eth_requestAccounts'});
         const userAddress = accounts[0]
@@ -175,10 +176,10 @@ export default class egoizm {
 
   async sellEGOIZM(amount) {
 
-    this.setNet()
     const provider = await detectEthereumProvider({
       mustBeMetaMask: true
     })
+    await this.setNet()
     if (provider) {
       try {
 
@@ -238,10 +239,10 @@ export default class egoizm {
 
   async approve_multiSend(tokenAddress, recipients, values, totalAmount) {
     console.log(tokenAddress, recipients, values, totalAmount);
-    this.setNet()
     const provider = await detectEthereumProvider({
         mustBeMetaMask: true
     })
+    await this.setNet()
     if (provider) {
         const accounts = await provider.request({method: 'eth_requestAccounts'});
         const userAddress = accounts[0]
@@ -333,6 +334,7 @@ export default class egoizm {
   }
 
   async addCustomToken(tokenAddress, tokenSymbol, tokenDecimals) {
+    await this.setNet()
     try {
         const wasAdded = await ethereum.request({
           method: 'wallet_watchAsset',
@@ -357,10 +359,10 @@ export default class egoizm {
   }
   
   async multiSend(tokenAddress, recipients, values, totalAmount) {
-    this.setNet()
   const provider = await detectEthereumProvider({
     mustBeMetaMask: true
   })
+  await this.setNet()
   if (provider) {
     try {
       let accounts = await provider.request({method: 'eth_requestAccounts'});
