@@ -33,7 +33,7 @@ export default class egoizm {
                 chainName: 'BSC Mainnet',
                 chainId: Web3.utils.toHex(this.chainId),
                 nativeCurrency: { name: 'Binance Chain Native Token', decimals: 18, symbol: 'BNB'},
-                rpcUrls: 'https://data-seed-prebsc-1-s1.binance.org:8545/'
+                rpcUrls: 'https://bsc-dataseed4.defibit.io'
               }
             ]
           });
