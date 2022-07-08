@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+      "outDir": "./dist/",
+      "noImplicitAny": false,
+      "jsx": "react",
+      "allowJs": true,
+      "moduleResolution": "node",
+      "target": "ES2020",
+    "module": "commonjs",
+    "lib": [
+      "ES2020"
+    ],
+    "noUnusedLocals": false,
+    "skipLibCheck": true,
+    "incremental": true,
+    "noUnusedParameters": false, 
+    "removeComments": true,
+    "declaration": false,
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "rootDir": "./",
+    "baseUrl": "./"
+    },
+    "exclude": [
+      "./dist"
+    ]
+    
+}
