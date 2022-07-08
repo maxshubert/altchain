@@ -303,6 +303,30 @@ export default class egoizm {
       return false
     }
   }
+
+  async addCustomToken(tokenAddress, tokenSymbol, tokenDecimals) {
+    try {
+        const wasAdded = await ethereum.request({
+          method: 'wallet_watchAsset',
+          params: {
+            type: 'ERC20',
+            options: {
+              address: tokenAddress,
+              symbol: tokenSymbol,
+              decimals: tokenDecimals
+            },
+          },
+        });
+      
+        if (wasAdded) {
+          console.log('Thanks for your interest!');
+        } else {
+          console.log('Your loss!');
+        }
+      } catch (error) {
+        console.log(error);
+      }
+  }
   
   async multiSend(tokenAddress, recipients, values, totalAmount) {
   const provider = await detectEthereumProvider({
