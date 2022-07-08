@@ -1,4 +1,4 @@
-const ERC20ABI = [
+const ERC20Abi = [
 	{
 		"inputs": [],
 		"stateMutability": "nonpayable",
@@ -882,4 +882,4 @@ const ERC20ABI = [
 	}
 ]
 
-export default ERC20ABI
+export default ERC20Abi
